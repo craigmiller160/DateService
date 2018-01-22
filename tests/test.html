@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Service Test</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.js"></script>
+	<script src="js/config.js"></script>
+</head>
+<body>
+
+	<h1>Date Service Test</h1>
+	<p id="result"></p>
+
+<script>
+	require(['jquery', 'date'], function($, $date){
+		$('#result').text($date.parse.dateString('2018-01-01'));
+	});
+</script>
+</body>
+</html>
