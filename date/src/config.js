@@ -1,5 +1,5 @@
 requirejs.config({
-	baseUrl: 'js',
+	baseUrl: 'src',
 	paths: {
 		jquery: ['https://code.jquery.com/jquery-3.3.1', 'lib/jquery'],
 		compareDate: 'date/compareDate',

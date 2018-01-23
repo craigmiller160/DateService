@@ -4,4 +4,4 @@ describe("my-library", function(){
       expect(myLibrary.sayHello()).toEqual("Hello");
     })
   })
-})
+});

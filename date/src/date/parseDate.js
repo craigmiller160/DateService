@@ -1,4 +1,4 @@
-define(['src/js/date/validateDate'], function($validateDate){
+define(['date/src/date/validateDate'], function($validateDate){
 	
 	function convertHour12To24(hour, isAm){
 		if(isAm && hour == 12){
