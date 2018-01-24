@@ -55,7 +55,7 @@ define(['validateDate'], function($validateDate){
 			var timeStringUC = timeString.toUpperCase();
 
 			var isAm = timeStringUC.indexOf('AM') > -1;
-			timeStringUC = timeString.replace('AM', '').replace('PM', '');
+			timeStringUC = timeStringUC.replace('AM', '').replace('PM', '');
 			var parts = timeStringUC.trim().split(':');
 			var date = new Date();
 
@@ -68,7 +68,7 @@ define(['validateDate'], function($validateDate){
 			}
 			var parts = dateTimeString.split(' ');
 			var date = this.dateString(parts[0]);
-			var time = this.time12String(parts[1]);
+			var time = this.time12String(parts[1] + ' ' + parts[2]);
 			return new Date(date.getUTCFullYear(), date.getMonth(), date.getDate(), time.getHours(), time.getMinutes(), time.getSeconds());
 		}
     };
