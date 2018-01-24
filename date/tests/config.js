@@ -24,10 +24,14 @@
 require.config({
     baseUrl: '../src',
     paths: {
+        'jquery': ['https://code.jquery.com/jquery-3.3.1', 'lib/jquery'],
         'jasmine': '../tests/lib/jasmine',
         'jasmine-html': '../tests/lib/jasmine-html',
         'jasmine-boot': '../tests/lib/boot',
-        'compareDate': 'date/compareDate'
+        'compareDate': 'date/compareDate',
+        'monthDate': 'date/monthDate',
+        'parseDate': 'date/parseDate',
+        'validateDate': 'date/validateDate'
     },
     shim: {
         'jasmine-html': {
@@ -41,7 +45,8 @@ require.config({
 
 
 require(['jasmine-boot'], function () {
-    require(['../tests/compareDate.spec'], function(){
+    require(['../tests/compareDate.spec', '../tests/monthDate.spec',
+        '../tests/parseDate.spec'], function(){
         //trigger Jasmine
         window.onload();
     })
