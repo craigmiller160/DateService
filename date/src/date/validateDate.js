@@ -69,11 +69,11 @@ define(['jquery'], function($){
 		//yyyy-MM-dd hh:mm:ss am
 		dateTime12String: function(dateTimeString){
 			var parts = dateTimeString.split(' ');
-			if(parts.length !== 2){
+			if(parts.length !== 3){
 				return false;
 			}
 
-			return this.dateString(parts[0]) && this.time12String(parts[1]);
+			return this.dateString(parts[0]) && this.time12String(parts[1] + ' ' + parts[2]);
 		},
 		//yyyy-MM-dd HH:mm:ss
 		dateTime24String: function(dateTimeString){
