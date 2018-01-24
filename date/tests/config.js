@@ -46,7 +46,7 @@ require.config({
 
 require(['jasmine-boot'], function () {
     require(['../tests/compareDate.spec', '../tests/monthDate.spec',
-        '../tests/parseDate.spec'], function(){
+        '../tests/parseDate.spec', '../tests/validateDate.spec'], function(){
         //trigger Jasmine
         window.onload();
     })

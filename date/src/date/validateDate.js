@@ -56,6 +56,11 @@ define(['jquery'], function($){
 		},
 		//HH:mm:ss
 		time24String: function(timeString){
+			var wrongParts = timeString.split(' ');
+			if(wrongParts.length > 1){
+				return false;
+			}
+
 			var parts = timeString.split(':');
 			return parts.length === 3 && !isNaN(parseInt(parts[0])) && parseInt(parts[0]) < 24 &&
 				!isNaN(parseInt(parts[1])) && parseInt(parts[1]) < 60 && 
