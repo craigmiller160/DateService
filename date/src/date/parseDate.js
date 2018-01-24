@@ -1,13 +1,13 @@
 define(['validateDate'], function($validateDate){
 	
 	function convertHour12To24(hour, isAm){
-		if(isAm && hour == 12){
+		if(isAm && hour === 12){
 			return 0;
 		}
 		else if(isAm){
 			return hour - 1;
 		}
-		else if(hour == 12){
+		else if(!isAm && hour === 12){
 			return hour;
 		}
 		else{
@@ -54,11 +54,12 @@ define(['validateDate'], function($validateDate){
 
 			var timeStringUC = timeString.toUpperCase();
 
-			var am = timeStringUC.indexOf('AM') > -1;
+			var isAm = timeStringUC.indexOf('AM') > -1;
 			timeStringUC = timeString.replace('AM', '').replace('PM', '');
 			var parts = timeStringUC.trim().split(':');
 			var date = new Date();
-			return new Date(date.getUTCFullYear(), date.getMonth(), date.getDate(), convertHour12To24(parts[0]), parts[1], parts[2]);
+
+			return new Date(date.getUTCFullYear(), date.getMonth(), date.getDate(), convertHour12To24(parseInt(parts[0]), isAm), parts[1], parts[2]);
 		},
 		//yyyy-MM-dd hh:mm:ss am
 		dateTime12String: function(dateTimeString){
