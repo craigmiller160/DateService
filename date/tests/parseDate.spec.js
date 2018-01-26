@@ -34,7 +34,6 @@ define(['parseDate'], function(parseDate){
             it('Date/Time should be 2018-01-01 01:12:12 pm', function(){
                 var expectedDateTime = new Date(2018, 0, 1, 13, 12, 12);
                 var actualDateTime = parseDate.dateTime12String('2018-01-01 01:12:12 pm');
-                console.log(actualDateTime); //TODO delete this
                 expect(actualDateTime.getUTCFullYear()).toEqual(expectedDateTime.getUTCFullYear());
                 expect(actualDateTime.getMonth()).toEqual(expectedDateTime.getMonth());
                 expect(actualDateTime.getUTCDate()).toEqual(expectedDateTime.getUTCDate());

@@ -36,9 +36,27 @@ define(['jquery'], function($){
 		//yyyy-MM-dd
 		dateString: function(dateString){
 			var parts = dateString.split('-');
-			return parts.length === 3 && !isNaN(parseInt(parts[0])) && parts[0].length === 4 &&
+			var mostPartsGood = parts.length === 3 && !isNaN(parseInt(parts[0])) && parts[0].length === 4 &&
 				!isNaN(parseInt(parts[1])) && parseInt(parts[1]) <= 12 && 
-				!isNaN(parseInt(parts[2])) && parseInt(parts[2]) <= 31;
+				!isNaN(parseInt(parts[2]));
+
+			if(mostPartsGood){
+                var date = parseInt(parts[2]);
+                var month = parseInt(parts[1]);
+
+                if(month === 4 || month === 6 || month === 11){
+                    return date > 0 && date <= 30;
+                }
+                else if(month === 2){
+                    return date > 0 && date <= 29;
+                }
+                else{
+                    return date > 0 && date <= 31;
+                }
+			}
+			else{
+				return false;
+			}
 		},
 		//hh:mm:ss am
 		time12String: function(timeString){

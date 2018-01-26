@@ -12,6 +12,14 @@ define(['validateDate'], function(validateDate){
             it('is invalid date values (201-17-52)', function(){
                 expect(validateDate.dateString('201-17-52')).toEqual(false);
             });
+
+            it('is invalid date value (2018-04-31)', function(){
+                expect(validateDate.dateString('2018-04-31')).toEqual(false);
+            });
+
+            it('is invalid date value (2018-02-31)', function(){
+                expect(validateDate.dateString('2018-02-31')).toEqual(false);
+            });
         });
 
         describe('time12String', function(){
@@ -68,6 +76,18 @@ define(['validateDate'], function(validateDate){
             it('is invalid time in date/time 24-hour format (2018-01-01 32:75:75', function(){
                 expect(validateDate.dateTime24String('2018-01-01 32:75:75 qr')).toEqual(false);
             });
+        });
+
+        describe('dateInputs', function(){
+            //TODO finish this
+        });
+
+        describe('time12Inputs', function(){
+            //TODO finish this
+        });
+
+        describe('time24Inputs', function(){
+            //TODO finish this
         });
     });
 });
