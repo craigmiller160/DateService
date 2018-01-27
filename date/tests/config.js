@@ -28,6 +28,7 @@ require.config({
         'jasmine': '../tests/lib/jasmine',
         'jasmine-html': '../tests/lib/jasmine-html',
         'jasmine-boot': '../tests/lib/boot',
+        'jasmine-jquery': '../tests/lib/jasmine-jquery',
         'compareDate': 'date/compareDate',
         'monthDate': 'date/monthDate',
         'parseDate': 'date/parseDate',
@@ -39,12 +40,15 @@ require.config({
         },
         'jasmine-boot': {
             deps: ['jasmine', 'jasmine-html']
+        },
+        'jasmine-jquery': {
+            deps: ['jasmine', 'jquery']
         }
     }
 });
 
 
-require(['jasmine-boot'], function () {
+require(['jasmine-boot', 'jasmine-jquery'], function () {
     require(['../tests/compareDate.spec', '../tests/monthDate.spec',
         '../tests/parseDate.spec', '../tests/validateDate.spec'], function(){
         //trigger Jasmine
